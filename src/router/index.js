@@ -6,7 +6,10 @@ const routes = [
   {
     path: "/",
     name: '登录',
-    component: () => import('../views/login/login.vue')
+    component: () => import('../views/login/login.vue'),
+    meta: {
+      title: "登录"
+    }
   },
   {
     path: "/Backstage",
@@ -15,34 +18,53 @@ const routes = [
       {
         path: '',
         name: "学生信息",
-        component: () => import("../views/Backstage/Content.vue")
+        component: () => import("../views/Backstage/Content.vue"),
+        meta: {
+          title: "学生信息"
+        }
+
       },
       {
         path: "StudentScore/:id",
         name: "个人成绩",
-        component: () => import("../views/Backstage/oneScore.vue")
+        component: () => import("../views/Backstage/oneScore.vue"),
+        meta: {
+          title: "个人成绩"
+        }
       },
       {
         path: "course",
         name: "课程信息",
-        component: () => import("../views/Backstage/Course.vue")
+        component: () => import("../views/Backstage/Course.vue"),
+        meta: {
+          title: "课程信息"
+        }
       },
       {
         path: "courseScore/:id",
         name: "课程成绩",
-        component: () => import("../views/Backstage/allScore.vue")
+        component: () => import("../views/Backstage/allScore.vue"),
+        meta: {
+          title: "课程成绩"
+        }
       },
       {
         path: "admin",
         name: "修改密码",
-        component: () => import("../views/changePassword/index.vue")
+        component: () => import("../views/changePassword/index.vue"),
+        meta: {
+          title: "修改密码"
+        }
       }
     ]
   },
   {
     path: "/:pathMatch(.*)*",
     name: "NotFound",
-    component: () => import("../views/404/404.vue")
+    component: () => import("../views/404/404.vue"),
+    meta: {
+      title: "页面不存在"
+    }
   }
 ]
 

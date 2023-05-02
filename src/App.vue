@@ -4,49 +4,43 @@
 
 <script setup>
 import {
-  onBeforeMount,
-  onBeforeUnmount,
-  onBeforeUpdate,
-  onMounted,
-  onUnmounted,
-  onUpdated,
-  ref,
-} from "vue";
-import { ElLoading } from "element-plus";
+  onBeforeMount, onBeforeUnmount, onBeforeUpdate, onMounted, onUnmounted, onUpdated, ref,
+} from "vue"
+import { ElLoading } from "element-plus"
 
-let loadingInstance = null;
+let loadingInstance = null
 
-const loading = ref(false);
+const loading = ref(false)
 
 onBeforeMount(() => {
   loadingInstance = ElLoading.service({
     text: "加载中",
-  });
-});
+  })
+})
 
 onMounted(() => {
-  loadingInstance.close();
-});
+  loadingInstance.close()
+})
 
 onBeforeUpdate(() => {
   loadingInstance = ElLoading.service({
     text: "加载中",
-  });
-});
+  })
+})
 
 onUpdated(() => {
-  loadingInstance.close();
-});
+  loadingInstance.close()
+})
 
 onBeforeUnmount(() => {
   loadingInstance = ElLoading.service({
     text: "加载中",
-  });
-});
+  })
+})
 
 onUnmounted(() => {
-  loadingInstance.close();
-});
+  loadingInstance.close()
+})
 </script>
 <style>
 * {
