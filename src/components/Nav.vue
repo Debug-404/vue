@@ -32,9 +32,9 @@
 </template>
 <script setup>
 import { Menu, Setting } from "@element-plus/icons-vue";
-import { removeToKen } from "../utils/userCookie.js";
+import { removeToKen } from "@/utils/userCookie";
 import { useRouter } from "vue-router";
-import { useStore } from "../stores";
+import { useStore } from "@/stores";
 
 const router = useRouter();
 const Store = useStore();

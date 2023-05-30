@@ -30,9 +30,9 @@
 <script setup>
 import { ref } from "vue";
 import { useRouter } from "vue-router";
-import { useStore } from "../../stores";
-import { changePassword, login } from "../../utils";
-import { hint } from "../../components/hint";
+import { useStore } from "@/stores";
+import { changePassword, login } from "@/utils";
+import { hint } from "@/components/hint";
 
 const Store = useStore(); //vuex 状态
 const ruleFormRef = ref();

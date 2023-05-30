@@ -12,7 +12,7 @@
 <script setup>
 import { ref, onMounted } from "vue";
 import { useRoute } from "vue-router";
-import { getAllStudentScore } from "../../utils";
+import { getAllStudentScore } from "@/utils";
 import * as echarts from 'echarts';
 
 const route = useRoute()

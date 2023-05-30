@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import { getToKen } from "../utils/userCookie.js";
-import { hint } from '../components/hint.js';
+import { getToKen } from "@/utils/userCookie";
+import { hint } from "@/components/hint";
 
 const routes = [
   {

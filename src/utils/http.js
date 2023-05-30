@@ -1,7 +1,7 @@
 import axios from "axios";
 import { ElLoading } from "element-plus";
 import { getToKen } from "./userCookie.js";
-import { hint } from "../components/hint.js";
+import { hint } from "@/components/hint";
 
 let loading = null
 

@@ -1,9 +1,5 @@
 <template>
-  <el-row
-    :style="{ background: `url(${imgUrl})` }"
-    align="middle"
-    style="height: 100%"
-  >
+  <el-row :style="{ background: `url(${imgUrl})` }" align="middle" style="height: 100%">
     <el-col :lg="18" :md="12" :xs="24">
       <div class="flex items-center flex-col">
         <div class="font-semibold text-6xl text-yellow-500 mb-4">欢迎使用</div>
@@ -13,33 +9,17 @@
     <el-col :lg="6" :md="12" :xs="24">
       <div class="flex items-center flex-col">
         <h1 class="text-gray-500 text-3xl mb-6">-账号密码登录-</h1>
-        <el-form
-          ref="ruleFormRef"
-          :model="formInline"
-          :rules="rules"
-          label-position="left"
-          label-width="70px"
-          style="width: 300px"
-        >
+        <el-form ref="ruleFormRef" :model="formInline" :rules="rules" label-position="left" label-width="70px"
+          style="width: 300px">
           <el-form-item label="账号" prop="user">
-            <el-input
-              v-model="formInline.user"
-              placeholder="user"
-              :prefix-icon="User"
-            />
+            <el-input v-model="formInline.user" placeholder="user" :prefix-icon="User" />
           </el-form-item>
           <el-form-item label="密码" prop="password">
-            <el-input
-              v-model="formInline.password"
-              placeholder="password"
-              show-password
-              type="password"
-              :prefix-icon="Lock"
-            />
+            <el-input v-model="formInline.password" placeholder="password" show-password type="password"
+              :prefix-icon="Lock" />
           </el-form-item>
           <el-form-item>
-            <el-button class="w-[250px]" round type="primary" @click="onSubmit"
-              >登录
+            <el-button class="w-[250px]" round type="primary" @click="onSubmit">登录
             </el-button>
           </el-form-item>
         </el-form>
@@ -50,12 +30,12 @@
 <script setup>
 import { ref } from "vue"
 import { useRouter } from "vue-router"
-import { useStore } from "../../stores"
-import { login } from "../../utils"
-import { setToKen } from "../../utils/userCookie.js"
+import { useStore } from "@/stores"
+import { login } from "@/utils"
+import { setToKen } from "@/utils/userCookie"
 import imgUrl from "../../assets/img/01.jpg"
 import { User, Lock } from "@element-plus/icons-vue"
-import { hint } from "../../components/hint"
+import { hint } from "@/components/hint"
 
 const router = useRouter()
 const Store = useStore()

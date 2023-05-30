@@ -1,5 +1,5 @@
 <template>
-  <router-view></router-view>
+  <RouterView></RouterView>
 </template>
 
 <script setup>
@@ -7,6 +7,7 @@ import {
   onBeforeMount, onBeforeUnmount, onBeforeUpdate, onMounted, onUnmounted, onUpdated, ref,
 } from "vue"
 import { ElLoading } from "element-plus"
+import { RouterView } from "vue-router"
 
 let loadingInstance = null
 

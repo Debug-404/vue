@@ -103,7 +103,7 @@ import {
   deleteStudent,
   getAllStudent,
   upDataStudent,
-} from "../../utils";
+} from "@/utils";
 import { useRouter } from "vue-router";
 import {
   Edit,
@@ -113,7 +113,7 @@ import {
   Close,
   CircleCheck,
 } from "@element-plus/icons-vue";
-import { hint } from "../../components/hint";
+import { hint } from "@/components/hint";
 
 let inputData = ref(""); //输入框
 let tableData = ref();

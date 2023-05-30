@@ -18,7 +18,7 @@
 
 <script setup>
 import { onMounted, ref } from "vue";
-import { getAllCourse } from "../../utils";
+import { getAllCourse } from "@/utils";
 import { useRouter } from "vue-router";
 
 let AllCourseData = ref();

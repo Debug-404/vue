@@ -49,7 +49,7 @@
 <script setup>
 import { onMounted, reactive, ref } from "vue";
 import { useRoute } from "vue-router";
-import { getOneStudentScore } from "../../utils";
+import { getOneStudentScore } from "@/utils";
 import { User, UserFilled, School } from "@element-plus/icons-vue";
 
 let stu = reactive({
