@@ -1,16 +1,10 @@
 <template>
   <el-row :gutter="20" justify="space-between">
     <el-col :span="3">
-      <el-input
-        v-model="inputData"
-        placeholder="名字查找"
-        :prefix-icon="Search"
-        @input="selStudent"
-      />
+      <el-input v-model="inputData" placeholder="名字查找" :prefix-icon="Search" @input="selStudent" />
     </el-col>
     <el-col :span="3">
-      <el-button :icon="CirclePlus" type="primary" @click="addStu"
-        >添加学生
+      <el-button :icon="CirclePlus" type="primary" @click="addStu">添加学生
       </el-button>
     </el-col>
   </el-row>
@@ -22,20 +16,10 @@
     <el-table-column label="家庭住址" prop="address" />
     <el-table-column fixed="right" label="操作" width="170">
       <template #default="scope">
-        <el-button
-          :icon="Edit"
-          size="small"
-          type="primary"
-          @click="changeDialog(scope)"
-        >
+        <el-button :icon="Edit" size="small" type="primary" @click="changeDialog(scope)">
           编辑
         </el-button>
-        <el-button
-          :icon="Delete"
-          size="small"
-          type="danger"
-          @click="delStudent(scope.row)"
-        >
+        <el-button :icon="Delete" size="small" type="danger" @click="delStudent(scope.row)">
           删除
         </el-button>
       </template>
@@ -43,19 +27,9 @@
   </el-table>
   <!--  对话框-->
   <div>
-    <el-dialog
-      v-model="dialogFormVisible"
-      :title="dialogType === 'add' ? '新增' : '编辑'"
-      draggable
-      width="500px"
-      @close="Clear(ruleFormRef)"
-    >
-      <el-form
-        ref="ruleFormRef"
-        :model="form"
-        :rules="rules"
-        :status-icon="true"
-      >
+    <el-dialog v-model="dialogFormVisible" :title="dialogType === 'add' ? '新增' : '编辑'" draggable width="500px"
+      @close="Clear(ruleFormRef)">
+      <el-form ref="ruleFormRef" :model="form" :rules="rules" :status-icon="true">
         <el-form-item :label-width="60" label="学号" prop="id">
           <el-input v-model="form.id" :disabled="prohibit" autocomplete="off" />
         </el-form-item>
@@ -74,23 +48,12 @@
       </el-form>
       <template #footer>
         <span class="dialog-footer">
-          <el-button
-            :icon="Close"
-            round
-            type="danger"
-            @click="
-              dialogFormVisible = false;
-              form.value = {};
-            "
-            >取消</el-button
-          >
-          <el-button
-            :icon="CircleCheck"
-            round
-            type="primary"
-            @click="tableConfig"
-            >{{ dialogType === "add" ? "确认添加" : "确认修改" }}</el-button
-          >
+          <el-button :icon="Close" round type="danger" @click="
+            dialogFormVisible = false;
+          form.value = {};
+          ">取消</el-button>
+          <el-button :icon="CircleCheck" round type="primary" @click="tableConfig">{{ dialogType === "add" ? "确认添加" :
+            "确认修改" }}</el-button>
         </span>
       </template>
     </el-dialog>
@@ -184,7 +147,7 @@ const tableConfig = () => {
           tableData.value.push(form.value);
         });
       } else hint("warning", "操作失败请重新确认", "warning");
-    });
+    })
   } else {
     upDataStudent(form.value).then((data) => {
       if (data["code"]) tableData.value[No] = form.value;

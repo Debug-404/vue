@@ -10,13 +10,13 @@
       <div class="flex items-center flex-col">
         <h1 class="text-gray-500 text-3xl mb-6">-账号密码登录-</h1>
         <el-form ref="ruleFormRef" :model="formInline" :rules="rules" label-position="left" label-width="70px"
-          style="width: 300px">
+                 style="width: 300px">
           <el-form-item label="账号" prop="user">
-            <el-input v-model="formInline.user" placeholder="user" :prefix-icon="User" />
+            <el-input v-model="formInline.user" :prefix-icon="User" placeholder="user" />
           </el-form-item>
           <el-form-item label="密码" prop="password">
-            <el-input v-model="formInline.password" placeholder="password" show-password type="password"
-              :prefix-icon="Lock" />
+            <el-input v-model="formInline.password" :prefix-icon="Lock" placeholder="password" show-password
+                      type="password" />
           </el-form-item>
           <el-form-item>
             <el-button class="w-[250px]" round type="primary" @click="onSubmit">登录
@@ -33,7 +33,7 @@ import { useRouter } from "vue-router"
 import { useStore } from "@/stores"
 import { login } from "@/utils"
 import { setToKen } from "@/utils/userCookie"
-import imgUrl from "../../assets/img/01.jpg"
+import imgUrl from "@/assets/img/01.jpg"
 import { User, Lock } from "@element-plus/icons-vue"
 import { hint } from "@/components/hint"
 
@@ -68,7 +68,7 @@ const onSubmit = () => {
             router.push({ path: "/Backstage/" })
             hint(formInline.value["user"], data["msg"], "success")
           } else hint("Error", data["msg"], "error")
-        }
+        },
       )
     }
   })
