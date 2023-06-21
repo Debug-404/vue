@@ -60,17 +60,18 @@ let ruleFormRef = ref()
 const onSubmit = () => {
   ruleFormRef.value.validate((flag) => {
     if (flag) {
-      login(formInline.value["user"], formInline.value["password"]).then(
-        (data) => {
-          if (data["code"]) {
-            Store.setUser(formInline.value["user"])
-            setToKen(data["token"])
-            router.push({ path: "/Backstage/" })
-            hint(formInline.value["user"], data["msg"], "success")
-          } else hint("Error", data["msg"], "error")
-        },
-      )
-    }
+      login(formInline.value["user"], formInline.value["password"])
+        .then(
+          (data) => {
+            if (data["code"]) {
+              Store.setUser(formInline.value["user"])
+              setToKen(data["token"])
+              router.push({ path: "/Backstage/" })
+              hint(formInline.value["user"], data["msg"], "success")
+            } else hint("Error", data["msg"], "error")
+          },
+        )
+    } else hint("Error", "操作失败", "error")
   })
 }
 </script>
