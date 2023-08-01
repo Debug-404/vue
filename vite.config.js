@@ -25,8 +25,9 @@ export default defineConfig({
     host: "0.0.0.0",
     cors: true, //前端跨域
     proxy: {
-      "/api": {
-        target: "http://127.0.0.1:8000",
+      "/api":
+      {
+        target: "http://127.0.0.1:5000",
         rewrite: (path) => path.replace(/^\/api/, ""),
       },
     },
