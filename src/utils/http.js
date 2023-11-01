@@ -30,7 +30,7 @@ http.interceptors.request.use(function(config) {
 http.interceptors.response.use(function(response) {
   // 对响应数据做点什么
   loading.close()
-  return response["data"]
+  return response.data
 }, function(error) {
   // 对响应错误做点什么
   hint("Error", "请求超时请稍后重试", "error")
