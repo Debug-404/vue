@@ -26,10 +26,10 @@ export default defineConfig({
     cors: true, //前端跨域
     proxy: {
       "/api":
-        {
-          target: "http://127.0.0.1:5000",
-          rewrite: (path) => path.replace(/^\/api/, ""),
-        },
+      {
+        target: "http://127.0.0.1:5000",
+        rewrite: (path) => path.replace(/^\/api/, ""),
+      },
     },
     open: true, //项目启动时打开浏览器
   },

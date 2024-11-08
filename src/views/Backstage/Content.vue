@@ -28,7 +28,7 @@
   <!--  对话框-->
   <div>
     <el-dialog v-model="dialogFormVisible" :title="dialogType === 'add' ? '新增' : '编辑'" draggable width="500px"
-               @close="Clear(ruleFormRef)">
+      @close="Clear(ruleFormRef)">
       <el-form ref="ruleFormRef" :model="form" :rules="rules" :status-icon="true">
         <el-form-item :label-width="60" label="学号" prop="id">
           <el-input v-model="form.id" :disabled="prohibit" autocomplete="off" />
@@ -52,8 +52,7 @@
             dialogFormVisible = false;
           form.value = {};
           ">取消</el-button>
-          <el-button :icon="CircleCheck" round type="primary"
-                     @click="tableConfig">{{ dialogType === "add" ? "确认添加" :
+          <el-button :icon="CircleCheck" round type="primary" @click="tableConfig">{{ dialogType === "add" ? "确认添加" :
             "确认修改" }}</el-button>
         </span>
       </template>
@@ -109,7 +108,7 @@ const rules = {
     {
       validator: (rule, value, callback) => {
         if (
-          tableData.value.find(function(val) {
+          tableData.value.find(function (val) {
             return val.id === value
           })
         ) {
